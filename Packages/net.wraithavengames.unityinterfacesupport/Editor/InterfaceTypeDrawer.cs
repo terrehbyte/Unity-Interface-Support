@@ -59,7 +59,7 @@ namespace WraithavenGames.UnityInterfaceSupport
             if (comp != null)
             {
                 // Make sure component is of the right interface
-                if (comp.GetType() != att.type)
+                if (!att.type.IsAssignableFrom(comp.GetType()))
                     // Component failed. Check game object.
                     comp = comp.gameObject.GetComponent(att.type) as MonoBehaviour;
 
